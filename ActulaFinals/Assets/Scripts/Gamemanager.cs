@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -10,19 +11,14 @@ public class Gamemanager : MonoBehaviour
     public TMP_Text timer;
 
     public GameObject[] tasks;
-    public Transform[] taskSpawns;
+    private GameObject[] taskSpawns;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         restorationPercent = 0;
-        foreach (GameObject task in tasks)
-        {
-            maxRestoration += 10;
-            var randSpawn = Random.Range(0, taskSpawns.Length);
-            Instantiate(task, taskSpawns[randSpawn].position, Quaternion.identity);
-            taskSpawns[randSpawn].gameObject.SetActive(false);
-        }
+
+        StartCoroutine(Taskspawn());
 
         StartCoroutine(TIMERCOUNTDOWN());
         timer.text = "Time left: 120";  
@@ -36,17 +32,30 @@ public class Gamemanager : MonoBehaviour
 
     private void endScreen()
     {
-        Debug.Log("Game over");
+      
         if(restorationPercent == maxRestoration)
         {
-            Debug.Log("You did it");
+            SceneManager.LoadScene("winScene");
         }
         else
         {
-            Debug.Log("You failed");
+            SceneManager.LoadScene("loseScene");
         }
     }
 
+    private IEnumerator Taskspawn()
+    {
+        foreach (GameObject task in tasks)
+        {
+            taskSpawns = GameObject.FindGameObjectsWithTag("taskSpawn");
+            yield return new WaitForSeconds(0.01f);
+            maxRestoration += 10;
+            var randSpawn = Random.Range(0, taskSpawns.Length);
+            Instantiate(task, taskSpawns[randSpawn].transform.position, Quaternion.identity);
+            Destroy(taskSpawns[randSpawn]);
+           
+        }
+    }
 
     private IEnumerator TIMERCOUNTDOWN()
     {

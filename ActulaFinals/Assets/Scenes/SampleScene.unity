@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 56541341}
   m_Layer: 0
   m_Name: taskpoint (1)
-  m_TagString: Untagged
+  m_TagString: taskSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 198370428}
   m_Layer: 0
   m_Name: taskpoint (2)
-  m_TagString: Untagged
+  m_TagString: taskSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -941,9 +941,6 @@ MonoBehaviour:
   tasks:
   - {fileID: 158988414241032510, guid: 4d00c88ee40f57a4499be09e1d40e31f, type: 3}
   - {fileID: 2470326025731816874, guid: cc4521058c506b54dac217372898d80a, type: 3}
-  taskSpawns:
-  - {fileID: 910613438}
-  - {fileID: 56541341}
 --- !u!4 &534930777
 Transform:
   m_ObjectHideFlags: 0
@@ -1487,7 +1484,7 @@ GameObject:
   - component: {fileID: 910613438}
   m_Layer: 0
   m_Name: taskpoint
-  m_TagString: Untagged
+  m_TagString: taskSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1960,7 +1957,7 @@ GameObject:
   - component: {fileID: 1550174271}
   m_Layer: 0
   m_Name: taskpoint (3)
-  m_TagString: Untagged
+  m_TagString: taskSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
