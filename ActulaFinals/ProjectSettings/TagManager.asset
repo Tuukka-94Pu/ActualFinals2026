@@ -8,6 +8,7 @@ TagManager:
   - p2
   - birdTask
   - taskSpawn
+  - restorationZone
   layers:
   - Default
   - TransparentFX

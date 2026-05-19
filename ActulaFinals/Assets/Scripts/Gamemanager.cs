@@ -2,11 +2,11 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
-    public int restorationPercent;
-    private int maxRestoration;
+    private int restoredZones;
     private bool hasLose;
     public TMP_Text timer;
 
@@ -15,8 +15,7 @@ public class Gamemanager : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
-        restorationPercent = 0;
+    {   
 
         StartCoroutine(Taskspawn());
 
@@ -26,14 +25,14 @@ public class Gamemanager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    { 
+
     }
 
     private void endScreen()
     {
       
-        if(restorationPercent == maxRestoration)
+        if(restoredZones >= 3)
         {
             SceneManager.LoadScene("winScene");
         }
@@ -48,9 +47,14 @@ public class Gamemanager : MonoBehaviour
         foreach (GameObject task in tasks)
         {
             taskSpawns = GameObject.FindGameObjectsWithTag("taskSpawn");
-            yield return new WaitForSeconds(0.01f);
-            maxRestoration += 10;
+            yield return new WaitForSeconds(0.05f);
             var randSpawn = Random.Range(0, taskSpawns.Length);
+
+            while (taskSpawns[randSpawn] == null)
+            {
+                randSpawn = Random.Range(0, taskSpawns.Length);
+            }
+
             Instantiate(task, taskSpawns[randSpawn].transform.position, Quaternion.identity);
             Destroy(taskSpawns[randSpawn]);
            

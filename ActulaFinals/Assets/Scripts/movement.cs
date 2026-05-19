@@ -30,9 +30,13 @@ public class movement : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("birdTask") && use.WasPressedThisFrame())
+        if(other.CompareTag("birdTask"))
         {
-            other.GetComponent<task2>().OnUse(gameObject);
+            if(use.WasPressedThisFrame())
+            {
+                other.GetComponent<task2>().OnUse(gameObject);
+            }
+            
         }
     }
 }

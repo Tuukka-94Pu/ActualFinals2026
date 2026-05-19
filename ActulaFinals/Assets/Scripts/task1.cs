@@ -4,14 +4,14 @@ public class task1 : MonoBehaviour
     public bool p1ready;
     public bool p2ready;
 
-    
+    public GameObject parentZone;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-       
 
+        parentZone = GameObject.FindGameObjectWithTag("restorationZone");
+        parentZone.GetComponent<RestorationZone>().subzones.Add(gameObject);
         
     }
 
@@ -25,8 +25,12 @@ public class task1 : MonoBehaviour
         {
            if(use1.inProgress && use2.inProgress)
             {
+                parentZone.GetComponent<RestorationZone>().RestorationPercent += 10;
+                parentZone.GetComponent<RestorationZone>().subzones.Remove(gameObject);
+
                 Destroy(gameObject);
-                GameObject.Find("GameManager").GetComponent<Gamemanager>().restorationPercent += 10;
+                
+
             }
         }
     }
