@@ -678,8 +678,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8939775b2f1ecef4a8ba84bb7a9ac7bd, type: 2}
+  m_sharedMaterial: {fileID: 2948159724850123417, guid: 8939775b2f1ecef4a8ba84bb7a9ac7bd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1017,8 +1017,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Gnomes on land
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8939775b2f1ecef4a8ba84bb7a9ac7bd, type: 2}
+  m_sharedMaterial: {fileID: 2948159724850123417, guid: 8939775b2f1ecef4a8ba84bb7a9ac7bd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -195.85463, y: 0, z: 0, w: 51.210068}
+  m_margin: {x: -195.85463, y: 0, z: -31.026268, w: 51.210068}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1289,8 +1289,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8939775b2f1ecef4a8ba84bb7a9ac7bd, type: 2}
+  m_sharedMaterial: {fileID: 2948159724850123417, guid: 8939775b2f1ecef4a8ba84bb7a9ac7bd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1396,10 +1396,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac1027aa143d704989573c289c0f077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds: []
-  soundNames: []
-  musicTracks: []
-  musicNames: []
+  sounds:
+  - {fileID: 8300000, guid: 2a0207493210b9f42af261944512053d, type: 3}
+  - {fileID: 8300000, guid: 2d84f59218b2ce9409ac68f79ed89950, type: 3}
+  - {fileID: 8300000, guid: 39e00e5a73caf8343b57fc710b71e8b5, type: 3}
+  - {fileID: 0}
+  soundNames:
+  - click
+  - bird1
+  - bird2
+  musicTracks:
+  - {fileID: 8300000, guid: 41800817e6f20484fb6f68c97d3a0503, type: 3}
+  musicNames:
+  - bg1
 --- !u!4 &1517511267
 Transform:
   m_ObjectHideFlags: 0
@@ -1476,8 +1485,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8939775b2f1ecef4a8ba84bb7a9ac7bd, type: 2}
+  m_sharedMaterial: {fileID: 2948159724850123417, guid: 8939775b2f1ecef4a8ba84bb7a9ac7bd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
