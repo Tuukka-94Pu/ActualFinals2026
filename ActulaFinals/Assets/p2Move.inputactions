@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "p2Move",
+    "maps": [
+        {
+            "name": "p2Move",
+            "id": "d4c398db-6afe-4f4b-810a-f5e42f9a9ab3",
+            "actions": [
+                {
+                    "name": "Moving",
+                    "type": "Button",
+                    "id": "fd852ea6-1993-49dc-b492-d49af38fc02c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a65aae9e-58d2-4721-8485-9216242cebab",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Moving",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
