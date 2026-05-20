@@ -2866,6 +2866,7 @@ MonoBehaviour:
   - click
   - bird1
   - bird2
+  - lapio
   - task
   musicTracks:
   - {fileID: 8300000, guid: bc2523f7e0ffc9147a7f470b8976550f, type: 3}
