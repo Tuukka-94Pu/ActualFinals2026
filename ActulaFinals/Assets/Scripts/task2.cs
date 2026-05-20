@@ -69,8 +69,8 @@ public class task2 : MonoBehaviour
 
             if(repeairProgress == 50)
             {
-            parentZone.GetComponent<RestorationZone>().RestorationPercent += 10;
-            parentZone.GetComponent<RestorationZone>().subzones.Remove(gameObject);
+            parentZone.GetComponent<RestorationZone>().incereaseCompletion();
+            parentZone.GetComponent<RestorationZone>().removeSubzone(gameObject);
             if(AudioManager.instance != null) AudioManager.instance.PlaySound("bird2");
 
             Destroy(bird);

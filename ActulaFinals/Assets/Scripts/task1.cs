@@ -36,19 +36,31 @@ public class task1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var use1 = GameObject.Find("player").GetComponent<movement>().use;
-        var use2 = GameObject.Find("player2").GetComponent<movement>().use;
+        var p1 = GameObject.Find("player").GetComponent<movement>();
+        var p2 = GameObject.Find("player2").GetComponent<movement>();
 
         if (p1ready && p2ready)
         {
-           if(use1.inProgress && use2.inProgress)
+            
+
+
+            var use1 = p1.use;
+            var use2 = p2.use;
+
+            p1.useInfo.text = "Smash use";
+            p2.useInfo.text = "at the same time";
+
+            if (use1.inProgress && use2.inProgress)
             {
-                parentZone.GetComponent<RestorationZone>().RestorationPercent += 10;
-                parentZone.GetComponent<RestorationZone>().subzones.Remove(gameObject);
+                parentZone.GetComponent<RestorationZone>().incereaseCompletion();
+                parentZone.GetComponent<RestorationZone>().removeSubzone(gameObject);
 
                 if (endSprite != null) endSprite.SetActive(true);
 
                if(AudioManager.instance != null) if (endAudio != null) AudioManager.instance.PlaySound(endAudio);
+
+                p1.useInfo.text = "";
+                p2.useInfo.text = "";
 
                 Destroy(gameObject);
                 
@@ -62,11 +74,13 @@ public class task1 : MonoBehaviour
         if(collision.CompareTag("p1"))
         {
             p1ready = true;
+            collision.GetComponent<movement>().useInfo.text = "Wait for other player";
         }
         
         if(collision.CompareTag("p2"))
         {
             p2ready = true;
+            collision.GetComponent<movement>().useInfo.text = "Wait for other player";
         }
     }
 

@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +16,8 @@ public class movement : MonoBehaviour
 
     public Sprite[] faces;
 
+    public TMP_Text useInfo;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +26,7 @@ public class movement : MonoBehaviour
         anims = GetComponent<Animator>();
         moves.Enable();
         use.Enable();
+        useInfo.text = "";
     }
 
     // Update is called once per frame
@@ -112,5 +115,10 @@ public class movement : MonoBehaviour
             }
             
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        useInfo.text = "";
     }
 }
