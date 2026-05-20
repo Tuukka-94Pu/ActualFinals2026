@@ -12,6 +12,19 @@ public class menuMan : MonoBehaviour
        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
+    public void Start()
+    {
+        if (audioManager != null)
+        {
+            if (audioManager.musicNames.Contains("bg1"))
+            {
+                audioManager.PlayMusic("bg1");
+                Debug.Log("musiikki sois");
+            }
+        }
+        return;
+    }
+
     public void Play(string scene)
     {
         Click();
