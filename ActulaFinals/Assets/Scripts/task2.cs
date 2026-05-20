@@ -43,6 +43,7 @@ public class task2 : MonoBehaviour
         bird.transform.parent = who.transform;
         bird.transform.localPosition = new Vector3(0, 3, 0);
         birdsFollowing = true;
+        AudioManager.instance.PlaySound("bird1");
     }
 
     public void OnUse(GameObject who)
@@ -70,6 +71,7 @@ public class task2 : MonoBehaviour
             {
             parentZone.GetComponent<RestorationZone>().RestorationPercent += 10;
             parentZone.GetComponent<RestorationZone>().subzones.Remove(gameObject);
+            AudioManager.instance.PlaySound("bird2");
             Destroy(bird);
                 Destroy(gameObject);
             

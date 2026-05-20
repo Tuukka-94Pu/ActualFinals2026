@@ -737,6 +737,7 @@ MonoBehaviour:
   p1ready: 0
   p2ready: 0
   endSprite: {fileID: 0}
+  endAudio: task
 --- !u!1 &5469019947079209653
 GameObject:
   m_ObjectHideFlags: 0

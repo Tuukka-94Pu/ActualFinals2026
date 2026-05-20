@@ -8,6 +8,8 @@ public class task1 : MonoBehaviour
     private GameObject parentZone;
     public GameObject endSprite;
 
+    public string endAudio;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,6 +47,8 @@ public class task1 : MonoBehaviour
                 parentZone.GetComponent<RestorationZone>().subzones.Remove(gameObject);
 
                 if (endSprite != null) endSprite.SetActive(true);
+
+                if (endAudio != null) AudioManager.instance.PlaySound(endAudio);
 
                 Destroy(gameObject);
                 

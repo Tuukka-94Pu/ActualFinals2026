@@ -20,13 +20,16 @@ public class Gamemanager : MonoBehaviour
         StartCoroutine(Taskspawn());
 
         StartCoroutine(TIMERCOUNTDOWN());
-        timer.text = "Time left: 120";  
+        timer.text = "Time left: 180";  
     }
 
     // Update is called once per frame
     void Update()
     { 
-
+        if(restoredZones >= 3)
+        {
+            SceneManager.LoadScene("winScene");
+        }
     }
 
     private void endScreen()
@@ -38,6 +41,7 @@ public class Gamemanager : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.PlayMusic("losebg");
             SceneManager.LoadScene("loseScene");
         }
     }
@@ -63,13 +67,13 @@ public class Gamemanager : MonoBehaviour
 
     private IEnumerator TIMERCOUNTDOWN()
     {
-        var TIME = 120;
+        var TIME = 180;
 
         while (TIME > 0)
         {
             yield return new WaitForSeconds(1);
             TIME--;
-            timer.text = "Time left: " + TIME;
+            timer.text = "Time left: " + TIME + " seconds";
         }
         endScreen();
     }
