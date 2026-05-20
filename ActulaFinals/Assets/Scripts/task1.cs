@@ -21,7 +21,6 @@ public class task1 : MonoBehaviour
             {
                 smallestDist = distanceto;
                 parentZone = zone;
-                Debug.Log("Checked zone " + zone.name);
             }
         }
 

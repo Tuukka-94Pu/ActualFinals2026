@@ -27,7 +27,6 @@ public class RestorationZone : MonoBehaviour
         if (subzones.Count == 0 && IsCompleted == false)
         {
             IsCompleted = true;
-            Debug.Log("Zone completed");
         }
 
 

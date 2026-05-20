@@ -26,7 +26,6 @@ public class task2 : MonoBehaviour
             {
                 smallestDist = distanceto;
                 parentZone = zone;
-                Debug.Log("Checked zone " + zone.name);
             }
 
             parentZone.GetComponent<RestorationZone>().subzones.Add(gameObject);
