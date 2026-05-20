@@ -48,7 +48,7 @@ public class task1 : MonoBehaviour
 
                 if (endSprite != null) endSprite.SetActive(true);
 
-                if (endAudio != null) AudioManager.instance.PlaySound(endAudio);
+               if(AudioManager.instance != null) if (endAudio != null) AudioManager.instance.PlaySound(endAudio);
 
                 Destroy(gameObject);
                 
