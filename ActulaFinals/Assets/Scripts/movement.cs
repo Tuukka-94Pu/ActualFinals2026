@@ -12,6 +12,8 @@ public class movement : MonoBehaviour
 
     private SpriteRenderer playerSprite;
 
+    private Animator anims;
+
     public Sprite[] faces;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,6 +21,7 @@ public class movement : MonoBehaviour
     {
         playerControl = GetComponent<CharacterController>();
         playerSprite = GetComponentInChildren<SpriteRenderer>();
+        anims = GetComponent<Animator>();
         moves.Enable();
         use.Enable();
     }
@@ -41,9 +44,17 @@ public class movement : MonoBehaviour
                     break;
                 case < 0:
                     playerSprite.sprite = faces[0];
+                    anims.SetBool("down", true);
+                    anims.SetBool("up", false);
+                    anims.SetBool("left", false);
+                    anims.SetBool("right", false);
                     break;
                 case > 0:
                     playerSprite.sprite = faces[1];
+                    anims.SetBool("up", true);
+                    anims.SetBool("down", false);
+                    anims.SetBool("left", false);
+                    anims.SetBool("right", false);
                     break;
 
             }
@@ -53,22 +64,38 @@ public class movement : MonoBehaviour
                     break;
                 case < 0:
                     playerSprite.sprite = faces[2];
+                    anims.SetBool("left", true);
+                    anims.SetBool("right", false);
+                    anims.SetBool("up", false);
+                    anims.SetBool("down", false);
                     break;
                 case > 0:
                     playerSprite.sprite = faces[3];
+                    anims.SetBool("right", true);
+                    anims.SetBool("left", false);
+                    anims.SetBool("up", false);
+                    anims.SetBool("down", false);
                     break;
             }
 
-            if(moves.WasReleasedThisDynamicUpdate())
-            {
-                Debug.Log("movement stopped");
-                moveVal = new Vector2(0,0);
-            }
+            
 
 
         }
 
+        if(moves.WasReleasedThisFrame())
+        {
+            moveVal = new Vector2(0, 0);
+            anims.SetBool("down", false);
+            anims.SetBool("up", false);
+            anims.SetBool("left", false);
+            anims.SetBool("right", false);
+            playerSprite.sprite = faces[0];
+
+        }
+
     }
+
 
 
         
