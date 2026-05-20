@@ -2858,17 +2858,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   sounds:
   - {fileID: 8300000, guid: 2a0207493210b9f42af261944512053d, type: 3}
-  - {fileID: 8300000, guid: 2d84f59218b2ce9409ac68f79ed89950, type: 3}
+  - {fileID: 8300000, guid: 618e353209c71a84ea2cd4a9993d9915, type: 3}
   - {fileID: 8300000, guid: 39e00e5a73caf8343b57fc710b71e8b5, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 5dc8de49e43704b45b7dd6c565972297, type: 3}
+  - {fileID: 8300000, guid: 20f103ce844e0f64ba6cbf467596c20d, type: 3}
   soundNames:
   - click
   - bird1
   - bird2
+  - task
   musicTracks:
-  - {fileID: 8300000, guid: 41800817e6f20484fb6f68c97d3a0503, type: 3}
+  - {fileID: 8300000, guid: bc2523f7e0ffc9147a7f470b8976550f, type: 3}
+  - {fileID: 8300000, guid: 243911ec05543c34eb76063346861e39, type: 3}
   musicNames:
   - bg1
+  - losebg
 --- !u!4 &1517511267
 Transform:
   m_ObjectHideFlags: 0
