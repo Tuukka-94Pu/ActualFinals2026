@@ -4,13 +4,27 @@ public class task1 : MonoBehaviour
     public bool p1ready;
     public bool p2ready;
 
-    public GameObject parentZone;
+    private GameObject[] allZones;
+    private GameObject parentZone;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        allZones = GameObject.FindGameObjectsWithTag("restorationZone");
 
-        parentZone = GameObject.FindGameObjectWithTag("restorationZone");
+        float smallestDist = 9000;
+        foreach(var zone in allZones)
+        {
+            var distanceto = Vector3.Distance(transform.position, zone.transform.position);
+            if(distanceto < smallestDist)
+            {
+                smallestDist = distanceto;
+                parentZone = zone;
+                Debug.Log("Checked zone " + zone.name);
+            }
+        }
+
+
         parentZone.GetComponent<RestorationZone>().subzones.Add(gameObject);
         
     }

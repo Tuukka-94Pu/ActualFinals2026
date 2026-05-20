@@ -9,21 +9,35 @@ public class task2 : MonoBehaviour
 
     private float distanceFromBird;
 
-    public GameObject parentZone,bird;
+    public GameObject parentZone, bird;
+
+    private GameObject[] allZones;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        repeairProgress = 0;
-        parentZone = GameObject.FindGameObjectWithTag("restorationZone");
-        parentZone.GetComponent<RestorationZone>().subzones.Add(gameObject);
-    }
+        allZones = GameObject.FindGameObjectsWithTag("restorationZone");
 
-    // Update is called once per frame
-    void Update()
-    {
-         distanceFromBird = Vector3.Distance(transform.position, bird.transform.position);
+        float smallestDist = 9000;
+        foreach (var zone in allZones)
+        {
+            var distanceto = Vector3.Distance(transform.position, zone.transform.position);
+            if (distanceto < smallestDist)
+            {
+                smallestDist = distanceto;
+                parentZone = zone;
+                Debug.Log("Checked zone " + zone.name);
+            }
+
+            parentZone.GetComponent<RestorationZone>().subzones.Add(gameObject);
+        }
     }
+        // Update is called once per frame
+        void Update()
+        {
+            distanceFromBird = Vector3.Distance(transform.position, bird.transform.position);
+        }
+    
 
     private void BirdFollow(GameObject who)
     {
