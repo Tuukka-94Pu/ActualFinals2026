@@ -26,7 +26,7 @@ public class Gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        if(restoredZones == 3)
+        if(restoredZones >= 2)
         {
             SceneManager.LoadScene("winScene");
         }
@@ -35,7 +35,7 @@ public class Gamemanager : MonoBehaviour
     private void endScreen()
     {
       
-        if(restoredZones >= 3)
+        if(restoredZones >= 2)
         {
             SceneManager.LoadScene("winScene");
         }

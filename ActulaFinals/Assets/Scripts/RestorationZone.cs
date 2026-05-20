@@ -11,6 +11,8 @@ public class RestorationZone : MonoBehaviour
 
     public bool IsCompleted;
 
+    private int subzoneCount;
+
     public List<GameObject> subzones = new List<GameObject>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,7 +41,10 @@ public class RestorationZone : MonoBehaviour
 
     public void removeSubzone(GameObject zone)
     {
+
         subzones.Remove(zone);
+
+        subzoneCount--;
 
         foreach(GameObject zon in subzones)
         {
@@ -49,7 +54,7 @@ public class RestorationZone : MonoBehaviour
             }
         }
 
-        if (subzones.Count == 0 && IsCompleted == false)
+        if ((subzones.Count == 0 || subzoneCount == 0 )&& IsCompleted == false)
         {
             IsCompleted = true;
 
@@ -63,6 +68,7 @@ public class RestorationZone : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         zonePercent.maxValue = subzones.Count * 10;
+        subzoneCount = subzones.Count;
         Debug.Log(subzones.Count + " subzones on" + transform.name);
     }
 }
