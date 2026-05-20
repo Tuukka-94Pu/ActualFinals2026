@@ -27,8 +27,12 @@ public class task2 : MonoBehaviour
                 smallestDist = distanceto;
                 parentZone = zone;
             }
+            if (!parentZone.GetComponent<RestorationZone>().subzones.Contains(gameObject))
 
-            parentZone.GetComponent<RestorationZone>().subzones.Add(gameObject);
+            {
+                parentZone.GetComponent<RestorationZone>().subzones.Add(gameObject);
+            }
+                
         }
     }
         // Update is called once per frame

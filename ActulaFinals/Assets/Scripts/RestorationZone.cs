@@ -24,6 +24,10 @@ public class RestorationZone : MonoBehaviour
     {
 
        
+        if(subzones.Contains(null))
+        {
+            subzones.Remove(null);
+        }            
 
 
 
@@ -45,6 +49,8 @@ public class RestorationZone : MonoBehaviour
             IsCompleted = true;
 
             zonePercent.value = zonePercent.maxValue;
+
+            GameObject.Find("GameManager").GetComponent<Gamemanager>().restoredZones++;
         }
     }
 

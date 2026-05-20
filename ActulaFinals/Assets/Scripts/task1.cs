@@ -26,8 +26,11 @@ public class task1 : MonoBehaviour
             }
         }
 
-
-        parentZone.GetComponent<RestorationZone>().subzones.Add(gameObject);
+        if(!parentZone.GetComponent<RestorationZone>().subzones.Contains(gameObject))
+        {
+            parentZone.GetComponent<RestorationZone>().subzones.Add(gameObject);
+        }
+    
 
 
         if (endSprite != null) endSprite.SetActive(false);

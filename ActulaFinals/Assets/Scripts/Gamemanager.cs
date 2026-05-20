@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
-    private int restoredZones;
+    public int restoredZones;
     private bool hasLose;
     public TMP_Text timer;
 
@@ -26,7 +26,7 @@ public class Gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        if(restoredZones >= 3)
+        if(restoredZones == 3)
         {
             SceneManager.LoadScene("winScene");
         }
