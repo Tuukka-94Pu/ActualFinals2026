@@ -29,6 +29,7 @@ public class menuMan : MonoBehaviour
     {
         if (audioManager != null)
         {
+            if(audioManager.soundNames.Contains("click"))
             audioManager.PlaySound("click");
         }
         return;
