@@ -6,6 +6,7 @@ public class task1 : MonoBehaviour
 
     private GameObject[] allZones;
     private GameObject parentZone;
+    public GameObject endSprite;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +27,9 @@ public class task1 : MonoBehaviour
 
 
         parentZone.GetComponent<RestorationZone>().subzones.Add(gameObject);
-        
+
+
+        if (endSprite != null) endSprite.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,6 +44,8 @@ public class task1 : MonoBehaviour
             {
                 parentZone.GetComponent<RestorationZone>().RestorationPercent += 10;
                 parentZone.GetComponent<RestorationZone>().subzones.Remove(gameObject);
+
+                if (endSprite != null) endSprite.SetActive(true);
 
                 Destroy(gameObject);
                 
