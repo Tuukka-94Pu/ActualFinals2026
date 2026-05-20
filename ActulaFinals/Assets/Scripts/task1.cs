@@ -16,10 +16,10 @@ public class task1 : MonoBehaviour
         allZones = GameObject.FindGameObjectsWithTag("restorationZone");
 
         float smallestDist = 9000;
-        foreach(var zone in allZones)
+        foreach (var zone in allZones)
         {
             var distanceto = Vector3.Distance(transform.position, zone.transform.position);
-            if(distanceto < smallestDist)
+            if (distanceto < smallestDist)
             {
                 smallestDist = distanceto;
                 parentZone = zone;

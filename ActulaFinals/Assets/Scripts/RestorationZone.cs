@@ -24,10 +24,7 @@ public class RestorationZone : MonoBehaviour
     {
 
        
-        if(subzones.Contains(null))
-        {
-            subzones.Remove(null);
-        }            
+                
 
 
 
@@ -43,6 +40,14 @@ public class RestorationZone : MonoBehaviour
     public void removeSubzone(GameObject zone)
     {
         subzones.Remove(zone);
+
+        foreach(GameObject zon in subzones)
+        {
+            if(zon == null)
+            {
+                subzones.Remove(zon);
+            }
+        }
 
         if (subzones.Count == 0 && IsCompleted == false)
         {
