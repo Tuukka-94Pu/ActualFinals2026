@@ -2857,7 +2857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   sounds:
-  - {fileID: 8300000, guid: 2a0207493210b9f42af261944512053d, type: 3}
+  - {fileID: 8300000, guid: 0059ca55f86ac53439937a447fdcfa52, type: 3}
   - {fileID: 8300000, guid: 618e353209c71a84ea2cd4a9993d9915, type: 3}
   - {fileID: 8300000, guid: 39e00e5a73caf8343b57fc710b71e8b5, type: 3}
   - {fileID: 8300000, guid: 5dc8de49e43704b45b7dd6c565972297, type: 3}
